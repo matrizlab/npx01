@@ -25,6 +25,26 @@ class ShoppingList extends Component {
     this.validateFields = this.validateFields.bind(this);
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    const prevStateString = JSON.stringify(prevState.groceryItems);
+    const updatedStateString = JSON.stringify(this.state.groceryItems);
+
+    if (prevStateString !== updatedStateString) {
+      console.log("Save this:", updatedStateString);
+      localStorage.setItem("groceryItems", updatedStateString);
+    }
+  }
+
+  componentDidMount() {
+    const savedStateFromLocalStorage = localStorage.getItem("groceryItems");
+
+    if (savedStateFromLocalStorage) {
+      this.setState({
+        groceryItems: JSON.parse(savedStateFromLocalStorage)
+      });
+    }
+  }
+
   handleOnChange(e) {
     const target = e.target;
     const name = target.name;
@@ -43,7 +63,10 @@ class ShoppingList extends Component {
     console.log("toggling: " + index);
 
     const newGroceryItemsState = [...this.state.groceryItems];
-    newGroceryItemsState[index].completed = target.checked;
+    newGroceryItemsState[index] = {
+      ...newGroceryItemsState[index],
+      completed: target.checked
+    };
 
     this.setState({
       groceryItems: newGroceryItemsState
@@ -73,7 +96,8 @@ class ShoppingList extends Component {
     if (isFormValid) {
       const newGroceryItemObject = {
         completed: false,
-        name: this.state.newItemName
+        name: this.state.newItemName,
+        id: "item-" + Date.now()
       };
       this.setState(state => {
         return {
@@ -91,7 +115,7 @@ class ShoppingList extends Component {
     const errors = {};
 
     if (!newItemName) {
-      errors["newItemName"] = "Please enter new beer";
+      errors["newItemName"] = "Please enter new item beer";
     }
 
     this.setState({
@@ -135,7 +159,7 @@ class ShoppingList extends Component {
               <input
                 type="text"
                 name="newItemName"
-                placeholder="Spaten"
+                placeholder="what beer"
                 value={this.state.newItemName}
                 onChange={this.handleOnChange}
               />
