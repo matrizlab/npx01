@@ -8,10 +8,11 @@ class Card extends Component {
       firstName: "Edoardo Armandi",
       initials: "EA",
       info: [
-        { title: ">", text: "Full Stack Web Developer" },
-        { title: "Country", text: "Italy" },
+        { title: ">", text: "full stack web development" },
+        { title: "Country", text: "italy" },
         { title: "Email", text: "info[at]matrizlab.com" },
-        { title: "Website", text: "matrizlab.com" }
+        { title: "Website", text: "matrizlab.com" },
+        { title: "Twitter", text: "@matrizlab" }
       ]
     };
   }

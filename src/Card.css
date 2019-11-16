@@ -14,7 +14,7 @@ body {
 }
 
 .card-header {
-  background-color: rgba(80, 103, 124, 0.73);
+  background-color: rgba(3, 124, 236, 0.73);
   padding: 14px 18px;
   font-size: 18px;
 }
@@ -30,9 +30,6 @@ body {
   color: #959595;
   font-size: inherit;
   position: relative;
-
-  -webkit-animation: rotate-center 0.6s ease-in-out both;
-  animation: rotate-center 0.6s ease-in-out both;
 }
 
 .card-header span:after {
