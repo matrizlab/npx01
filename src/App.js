@@ -1,15 +1,13 @@
 import React from "react";
 import "./App.css";
 
-import InputEvents from "./events/InputEvents";
-import MovementEvents from "./events/MovementEvents";
+import FormValidation from "./FormValidation";
 import "./events/Events.css";
 
 function App() {
   return (
     <div className="App">
-      <InputEvents />
-      <MovementEvents />
+      <FormValidation />
     </div>
   );
 }
