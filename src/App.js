@@ -1,13 +1,13 @@
 import React from "react";
 import "./App.css";
 
-import FormValidation from "./FormValidation";
-import "./events/Events.css";
+import ShoppingList from "./shopList/ShoppingList";
+import "./shopList/ShoppingList.css";
 
 function App() {
   return (
     <div className="App">
-      <FormValidation />
+      <ShoppingList />
     </div>
   );
 }
