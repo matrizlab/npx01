@@ -11,7 +11,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Star Wars Vehicles</h1>
+        <h1>Demo Star Wars Vehicles</h1>
         <Router>
           <ul>
             <li>
