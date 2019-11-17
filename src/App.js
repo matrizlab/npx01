@@ -11,11 +11,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Demo Star Wars Vehicles</h1>
+        <h1>Demo git Star Wars Vehicles</h1>
         <Router>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/">Home git</Link>
             </li>
           </ul>
           <hr />
